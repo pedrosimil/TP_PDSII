@@ -60,7 +60,7 @@ int main() {
 }
 =======
             } else if (escolha == 4) {
-                // Mostrar detalhes de todas as atividades disponíveis (projetos e tarefas)
+                // Mostrar detalhes de todas as atividades disponíveis (projetos e tarefas
                 std::cout << "Atividades disponíveis:" << std::endl;
                 for (size_t i = 0; i < atividades.size(); i++) {
                     atividades[i]->exibirDetalhes();
