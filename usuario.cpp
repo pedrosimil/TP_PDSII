@@ -35,7 +35,7 @@ std::string Usuario::getSenha() const {
     return senha;
 }
 
-// Método para exibir detalhes do usuário na saída padrã
+// Método para exibir detalhes do usuário na saída padrão
 void Usuario::exibirDetalhes() const {
     std::cout << "Username: " << username << std::endl;
     std::cout << "E-mail: " << email << std::endl;
