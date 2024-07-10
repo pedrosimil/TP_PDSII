@@ -23,6 +23,6 @@ private:
     std::string username;  
     std::string email;     
     std::string senha;    
-};;
+};
 
 #endif 
