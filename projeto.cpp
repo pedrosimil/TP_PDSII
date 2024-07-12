@@ -48,4 +48,4 @@ void Projeto::excluir() {
         // Captura exceções e imprime mensagens de erro
         std::cerr << "Erro ao excluir projeto: " << e.what() << std::endl;
     }
-}
+}:
