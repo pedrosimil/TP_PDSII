@@ -46,6 +46,5 @@ void Projeto::excluir() {
 
     } catch (const std::exception& e) {
         // Captura exceções e imprime mensagens de erro
-        std::cerr << "Erro ao excluir projeto: " << e.what() << std::endl;
-    }
+        std::cerr << "Erro ao excluir projeto: " << e.what() << std::endl;}
 }

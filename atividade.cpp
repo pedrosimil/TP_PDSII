@@ -1,4 +1,5 @@
 #include "atividade.h"
+#include <stdexcept>
 
 // Implementação do construtor da classe Atividade
 Atividade::Atividade(const std::string& titulo): titulo(titulo) {

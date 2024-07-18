@@ -2,6 +2,8 @@
 #define TAREFA_H
 
 #include "atividade.h"
+#include <iostream>
+#include <string>
 
 // Definição da classe Tarefa, que herda da classe base Atividade
 class Tarefa : public Atividade {

@@ -1,3 +1,6 @@
+#ifndef PROJETO_H
+#define PROJETO_H
+
 #include <iostream>    
 #include "atividade.h" 
 #include <vector>      
