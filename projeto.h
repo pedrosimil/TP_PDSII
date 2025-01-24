@@ -1,31 +1,27 @@
 #ifndef PROJETO_H
 #define PROJETO_H
 
-#include <iostream>    
-#include "atividade.h" 
-#include <vector>      
+#include <string>
+#include <vector>
+#include "tarefa.h"
 
-
-class Projeto : public Atividade {
+class Projeto {
 public:
-    
-    Projeto(const std::string& titulo);
+    Projeto(const std::string& titulo, int numero);
 
-   
-    virtual ~Projeto();
+    void criarProjeto(const std::string& titulo, int numero);
+    void excluirProjeto();
+    void editarProjeto(const std::string& novoTitulo);
 
-    // Método para adicionar uma atividade ao projeto
-    void adicionarAtividade(Atividade* atividade);
+    void adicionarTarefa(Tarefa* tarefa);
+    void removerTarefa(int numeroTarefa);
 
-    // Método para exibir detalhes do projeto (override da função virtual na classe base)
-    void exibirDetalhes() const override;
-
-    // Método virtual para excluir o projeto
-    virtual void excluir();
+    void exibirDetalhes() const;
 
 private:
-    // Vetor de ponteiros para Atividade para armazenar as atividades associadas ao projeto
-    std::vector<Atividade*> atividades;
+    std::string titulo;
+    std::vector<Tarefa*> tasks;
+    int numero;
 };
 
-#endif
+#endif // PROJETO_H

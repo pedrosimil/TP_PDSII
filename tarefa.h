@@ -1,29 +1,22 @@
 #ifndef TAREFA_H
 #define TAREFA_H
 
-#include "atividade.h"
-#include <iostream>
 #include <string>
+#include "data.h" // Ajuste o caminho conforme necessário
 
-// Definição da classe Tarefa, que herda da classe base Atividade
-class Tarefa : public Atividade {
+class Tarefa {
 public:
-    // Construtor da classe Tarefa 
-    Tarefa(const std::string& titulo);
-    Tarefa(const std::string& titulo, const std::string& descricao, const std::string& data);
+    Tarefa(const std::string& titulo, const std::string& descricao, const Data& data, int numeroTarefa);
+    ~Tarefa();
 
-    // Destrutor virtual da classe Tarefa (override da classe base)
-    ~Tarefa() override;
-
-    // Método para exibir detalhes da tarefa (override da classe base)
-    void exibirDetalhes() const override;
-
-    // Método para editar os atributos da tarefa (título, descrição, data)
-    void editar(const std::string& novoTitulo, const std::string& novaDescricao, const std::string& novaData);
+    void editar(const std::string& novoTitulo, const std::string& novaDescricao, const Data& novaData);
+    void exibirDetalhes() const;
 
 private:
-    // Variáveis de membro privadas para armazenar descrição e data da tarefa
+    std::string titulo;
     std::string descricao;
-    std::string data;
+    Data data;
+    int numeroTarefa;
 };
-#endif
+
+#endif // TAREFA_H

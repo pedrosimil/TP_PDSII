@@ -4,6 +4,9 @@
 // Construtor da classe Projeto que inicializa o título usando o construtor da classe base Atividade
 Projeto::Projeto(const std::string& titulo) : Atividade(titulo) {}
 
+Projeto::Projeto(const std::string& titulo, int numero)
+    : titulo(titulo), numero(numero) {}
+
 // Destrutor da classe Projeto, libera a memória alocada para as atividades associadas ao projeto
 Projeto::~Projeto() {
     for (auto& atividade : atividades) {
@@ -11,6 +14,26 @@ Projeto::~Projeto() {
     }
 }
 
+void Projeto::criarProjeto(const std::string& titulo, int numero) {
+    this->titulo = titulo;
+    this->numero = numero;
+}
+
+void Projeto::excluirProjeto() {
+    // Implementar lógica para excluir projeto
+}
+
+void Projeto::editarProjeto(const std::string& novoTitulo) {
+    this->titulo = novoTitulo;
+}
+
+void Projeto::adicionarTarefa(Tarefa* tarefa) {
+    tasks.push_back(tarefa);
+}
+
+void Projeto::removerTarefa(int numeroTarefa) {
+    // Implementar lógica para remover tarefa
+}
 
 void Projeto::adicionarAtividade(Atividade* atividade) {
     atividades.push_back(atividade);
@@ -18,13 +41,17 @@ void Projeto::adicionarAtividade(Atividade* atividade) {
 
 // Exibe os detalhes do projeto, incluindo seu título e as atividades associadas
 void Projeto::exibirDetalhes() const {
-    std::cout << "Projeto: " << getTitulo() << std::endl;
+    std::cout << "Título do Projeto: " << titulo << std::endl;
+    std::cout << "Número do Projeto: " << numero << std::endl;
     std::cout << "Atividades do Projeto:" << std::endl;
     for (const auto& atividade : atividades) {
         atividade->exibirDetalhes();
     }
+    std::cout << "Tarefas:" << std::endl;
+    for (const auto& tarefa : tasks) {
+        tarefa->exibirDetalhes();
+    }
 }
-
 
 void Projeto::excluir() {
     try {
